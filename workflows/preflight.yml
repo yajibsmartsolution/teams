@@ -1,0 +1,25 @@
+name: KEDCO Railway preflight
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci --no-audit --no-fund
+      - name: Build TypeScript backend
+        working-directory: backend
+        run: npm run build
+      - name: Check role-page routes
+        run: node tools/verify-deployment.mjs
+      - name: Check dashboard static assets
+        run: python3 tools/verify-static-assets.py
