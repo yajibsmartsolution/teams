@@ -1,0 +1,28 @@
+# Private credentials, data, and generated build outputs
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+LOGIN_DETAILS_PRIVATE.csv
+**/LOGIN_DETAILS_PRIVATE.csv
+cloud data/
+cloud-data/
+**/cloud data/
+*.sqlite
+*.sqlite3
+*.db
+**/node_modules/
+**/dist/
+*.log
+*.tmp
+*.bak
+*.backup*
+*backup-before-*
+*current-hour-overview-backup-*
+*hourly-paste-backup-*
+.DS_Store
+.vscode/
+.railway/
