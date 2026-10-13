@@ -1,0 +1,41 @@
+/* Screen enhancements are scoped to RE/TE forms. Existing print sheets remain. */
+@media screen {
+  #formsView .operator-form { color:#17324e; accent-color:#0875bb; }
+  #formsView .op-paper { width:100%; max-width:1450px; padding:24px; border:1px solid #d3e2ee; border-radius:18px; box-shadow:0 12px 36px rgba(17,67,107,.08); background:#fff; }
+  #formsView .op-smart-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; padding:16px; background:#f4f9fd; border:1px solid #d6e6f2; border-radius:14px; }
+  #formsView .op-smart-field { min-width:0; display:flex; flex-direction:column; gap:6px; }
+  #formsView .op-smart-field.wide { grid-column:span 2; }
+  #formsView .op-smart-field > label,#formsView .approval-fields label { color:#32536f; font-size:11px; font-weight:750; line-height:1.5; }
+  #formsView .operator-form input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=file]),
+  #formsView .operator-form select,#formsView .operator-form textarea {
+    box-sizing:border-box; width:100%; min-height:38px; padding:9px 10px; border:1px solid #c6d8e7; border-radius:8px; color:#153750; background:#fff; font:500 12px/1.5 'Segoe UI',Arial,sans-serif; transition:border-color .15s,box-shadow .15s;
+  }
+  #formsView .operator-form textarea { min-height:70px; resize:vertical; }
+  #formsView .operator-form :is(input,select,textarea):focus { outline:none; border-color:#178ac6; box-shadow:0 0 0 3px rgba(23,138,198,.14); }
+  #formsView .operator-form [aria-invalid=true] { border-color:#c94242; background:#fff7f7; }
+  #formsView .operator-form input[readonly] { background:#edf4f8; color:#546c80; }
+  #formsView .operator-form input:disabled,#formsView .operator-form select:disabled { background:#f0f5f8; color:#546c80; }
+  #formsView .op-section-title { margin:20px 0 10px; padding:10px 13px; border-radius:9px; border-left:3px solid #cba349; background:linear-gradient(90deg,#eaf5fd,#f9fcff); color:#14598c; font-size:12px; letter-spacing:.025em; }
+  #formsView .op-paper-table th { padding:10px 8px; background:#eaf5fb; color:#19577f; font-size:10px; line-height:1.5; }
+  #formsView .op-paper-table td { padding:8px; vertical-align:top; font-size:11px; line-height:1.5; }
+  #formsView .op-paper-table tbody tr:nth-child(even) { background:#fafcfe; }
+  #formsView .op-paper-table :is(input,select,textarea) { min-width:92px; min-height:34px!important; padding:6px 7px!important; font-size:11px!important; }
+  #formsView .op-table-scroll { overflow-x:auto; border:1px solid #d6e2ed; border-radius:10px; scrollbar-color:#97bad1 #edf5fa; }
+  #formsView .op-sign-box { padding:14px; border-radius:12px; border-color:#d0e0ec; background:#fbfdff; }
+  #formsView .dispatch-panel,#formsView [data-dispatch-panel] { padding:18px; border-radius:14px; border-color:#c9deec; background:#edf7fd; }
+  #formsView .dispatch-field > span { font-size:11px; color:#315b78; }
+  #formsView .dispatch-send { min-height:42px; border-radius:9px; background:#087bb8; color:#fff; font-size:12px; box-shadow:0 5px 14px rgba(8,123,184,.16); }
+  #formsView .form-toolbar .btn,#formsView .toolbar .btn { min-height:36px; padding:8px 12px; border-radius:8px; }
+  #formsView .rete-ux-guide { margin:0 0 16px; padding:11px 14px; background:#ecf6fd; border-left:3px solid #cba349; border-radius:8px; color:#315d7b; font-size:12px; line-height:1.65; }
+  #formsView .rete-ux-message { margin:12px 0; padding:10px 13px; border-radius:8px; border:1px solid #cce2f0; background:#f0f8fd; color:#315d7b; font-size:12px; line-height:1.5; }
+  #formsView .rete-ux-message[data-kind=error] { border-color:#efc9c9; background:#fff3f3; color:#8b2929; }
+  #formsView .rete-ux-custom { display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
+  #formsView .rete-ux-custom button { padding:4px 7px; border:1px solid #c7dbe8; border-radius:6px; color:#16648e; background:#f3f9fd; font-size:10px; cursor:pointer; }
+  #formsView .rete-ux-custom input { flex:1; min-width:120px; }
+  #formsView .rete-ux-suggestion { margin-bottom:6px; background:#f3f9fd!important; color:#17608c!important; }
+  #formsView .operator-form [hidden] { display:none!important; }
+  @media (max-width:1100px) { #formsView .op-smart-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+  @media (max-width:800px) { #formsView .op-paper { padding:14px; } #formsView .op-smart-grid { grid-template-columns:repeat(2,minmax(0,1fr)); padding:12px; } #formsView .op-sign-grid.four { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:520px) { #formsView .op-smart-grid,#formsView .op-sign-grid,#formsView .op-sign-grid.four { grid-template-columns:1fr; } #formsView .op-smart-field.wide { grid-column:auto; } #formsView .op-paper { padding:10px; } }
+}
+@media print { .rete-ux-guide,.rete-ux-message,.rete-ux-custom,.rete-ux-suggestion,.rete-ux-filter { display:none!important; } }
