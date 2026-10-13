@@ -1,14 +1,3 @@
-# Optional Analyzer–TMO compatibility add-on (13 October 2026)
-
-The new uploaded pages have been staged alongside the original ones to protect existing features:
-
-- `/pages/tmo/progressive-analyzer.html`
-- `/pages/tmo/tmo-preview.html`
-
-The new pages share progressive monthly feeder/day records via authenticated `/api/energy/*` endpoints and persistent Railway files. They do **not** replace or rewrite the standard KEDCO Analyzer/TMO reporting datasets. See [`COMPATIBILITY_REPORT.md`](COMPATIBILITY_REPORT.md) before approving a production rollout.
-
----
-
 # KEDCO Technical Automation — GitHub + Railway deployment
 
 **Target address:** `https://teams.com.ng`  
